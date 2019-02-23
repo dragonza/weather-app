@@ -25,7 +25,6 @@ function* handleFetchWeather(payload) {
     yield put(updateForecastListIds(Object.keys(groupedDataByDt)));
     yield put(updateForecastMap(groupedDataByDt));
     yield put(fetchWeatherSuccess({ loading: false, error: false }));
-    console.log("res", res, groupedDataByDt);
   } catch (e) {}
 }
 

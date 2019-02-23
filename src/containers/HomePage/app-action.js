@@ -12,7 +12,6 @@ import {
 } from "./constant";
 
 export const fetchWeather = cityId => {
-  console.log("cityId", cityId);
   return {
     type: FETCH_WEATHER,
     cityId

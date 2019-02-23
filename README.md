@@ -1,6 +1,6 @@
 
 ## Introduction
-This application shows current 5-day weather forecast.
+This application shows current 5-day weather forecast every 3 hours.
 
 ## Getting Started
 
