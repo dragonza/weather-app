@@ -6,7 +6,8 @@ import {
   fetchWeatherSuccess,
   updateForecastListIds,
   updateForecastMap,
-  updateLocation
+  updateLocation,
+  fetchWeatherFailed
 } from "./app-action";
 import { FETCH_WEATHER } from "./constant";
 
@@ -25,7 +26,12 @@ function* handleFetchWeather(payload) {
     yield put(updateForecastListIds(Object.keys(groupedDataByDt)));
     yield put(updateForecastMap(groupedDataByDt));
     yield put(fetchWeatherSuccess({ loading: false, error: false }));
-  } catch (e) {}
+  } catch (e) {
+    yield put(fetchWeatherFailed({
+      error: e,
+      loading: false
+    }))
+  }
 }
 
 export default function* appSaga() {

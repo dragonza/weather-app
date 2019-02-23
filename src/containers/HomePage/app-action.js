@@ -8,7 +8,8 @@ import {
   UPDATE_FORECAST_BYIDS,
   UPDATE_FORECASTMAP,
   FETCH_WEATHER_SUCCEEDED,
-  FETCH_WEATHER_LOADING
+  FETCH_WEATHER_LOADING,
+  FETCH_WEATHER_FAILED
 } from "./constant";
 
 export const fetchWeather = cityId => {
@@ -20,7 +21,7 @@ export const fetchWeather = cityId => {
 
 export const fetchWeatherLoading = () => {
   return UPDATE_DATA({
-    _type: `${UPDATE_WEATHER}/${FETCH_WEATHER_LOADING}'`,
+    _type: `${UPDATE_WEATHER}/${FETCH_WEATHER_LOADING}`,
     _value: true,
     _path: `${basePath}.loading`
   });
@@ -53,6 +54,14 @@ export const updateForecastMap = payload => {
 export const fetchWeatherSuccess = payload => {
   return UPDATE_DATA({
     _type: `${UPDATE_WEATHER}/${FETCH_WEATHER_SUCCEEDED}`,
+    _path: basePath,
+    _value: fromJS(payload)
+  });
+};
+
+export const fetchWeatherFailed = payload => {
+  return UPDATE_DATA({
+    _type: `${UPDATE_WEATHER}/${FETCH_WEATHER_FAILED}`,
     _path: basePath,
     _value: fromJS(payload)
   });

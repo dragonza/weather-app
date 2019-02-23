@@ -16,11 +16,7 @@ class ForecastList extends React.PureComponent {
     }
     return (
       <div>
-        <h2 className="weather-forecast-location text-center mb-3">
-          <span>Location</span>
-          <span>{` ${location.get("name")}, ${location.get("country")}`}</span>
-        </h2>
-        <table className="table table-striped">
+        <table className="table table-striped mt-4">
           <thead>
             <tr>
               <th>Date - time</th>
