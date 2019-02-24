@@ -22,7 +22,6 @@ class App extends React.PureComponent {
     }
 
     if (this.props.error) {
-      console.log('this.props.error', this.props.error);
       return (
         <div className="error alert alert-danger mt-3">{this.props.error.message}</div>
       )
