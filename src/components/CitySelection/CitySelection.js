@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import Select from "react-select";
-export const cityList = [
+import PropTypes from "prop-types";
+
+const cityList = [
   { value: "vancouverCA", label: "Vancouver, CA", id: "6173331" },
   { value: "torontoCA", label: "Toronto, CA", id: "6167865"},
   { value: "londonUK", label: "London, UK", id: "2643743"},
@@ -10,31 +12,22 @@ export const cityList = [
   { value: "bangkok", label: "Bangkok", id: "1609350" },
   { value: "hoChiMinhCity", label: "Ho Chi Minh City", id: "1566083" },
 ];
-export default class SingleSelect extends Component {
-  state = {
-    isClearable: true,
-    isDisabled: false,
-    isLoading: false,
-    isRtl: false,
-    isSearchable: true
-  };
 
+
+export default class CitySelection extends Component {
   handleSelectionChange = e => {
-    console.log("e", e);
     this.props.onSelect(e)
   };
 
   render() {
-    const { isLoading } = this.state;
     return (
       <Fragment>
         <Select
           className="basic-single"
           classNamePrefix="select"
           defaultValue={cityList[0]}
-          isLoading={isLoading}
           isSearchable={true}
-          name="color"
+          name="city"
           placeholder="Please select a city"
           onChange={this.handleSelectionChange}
           options={cityList}
@@ -43,3 +36,7 @@ export default class SingleSelect extends Component {
     );
   }
 }
+
+CitySelection.propTypes = {
+  onSelect: PropTypes.func.isRequired
+};

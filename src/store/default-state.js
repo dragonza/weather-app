@@ -5,7 +5,8 @@ export default fromJS({
     forecast: {
       byIds: [],
       forecastMap: {},
-      location: {}
+      location: {},
+      isCelsius: true
     },
     loading: false,
     error: false

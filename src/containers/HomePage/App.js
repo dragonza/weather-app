@@ -2,12 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchWeather } from "./app-action";
 import ForecastList from "./ForecastList/ForecastList";
+import TempToggle from "./TempToggle/TempToggle";
 import {
   makeWeatherErrorSelector,
   makeWeatherLoadingSelector
 } from "./app-selector";
 import { createStructuredSelector } from "reselect";
-import CitySelection from './CitySelection/CitySelection';
+import CitySelection from '../../components/CitySelection/CitySelection';
 
 class App extends React.PureComponent {
   componentDidMount() {
@@ -37,7 +38,8 @@ class App extends React.PureComponent {
   render() {
     return (
       <div className="container">
-        <h1 className="text-center container-header">Weather forecast</h1>
+        <h1 className="text-center container-header mt-4">Weather forecast in the next 5 days</h1>
+        <TempToggle />
         <label htmlFor="">Location</label>
         <CitySelection onSelect={this.handleOnSelect}/>
         {this.renderForecast()}
