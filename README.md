@@ -16,4 +16,9 @@ Deployed version: https://relaxed-pike-65aac4.netlify.com/
 * This app only shows some cities to display forecast.
 * Users are able to toggle between Celsius and Fahrenheit
 
+## Architecture
+* This app has applied React, Redux, Redux Saga and ImmutableJS.
+* This app has some basic data-reducer (create, remove, update) to minimize the redundancy of writing many reducers. 
+Typical reducers could also be used normally along with this data-reducer. For more information: read [this](https://github.com/dragonza/react-redux-boilerplate)
+
 
